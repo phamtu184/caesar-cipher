@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mã hóa Caesar</title>
+    <link rel="stylesheet" href="./src/main.css" />
+  </head>
+  <body>
+    <div class="container main">
+      <h2 class="text-center font-bold text-gray-800 text-3xl">
+        Mã hóa Caesar
+      </h2>
+      <div>
+        <label>Key:</label>
+        <input
+          type="number"
+          id="key-input"
+          class="focus:outline-none text-gray-800 border"
+          onchange="handleKeyInput()"
+        />
+      </div>
+      <div class="flex flex-row gap-4 px-4 py-4">
+        <div class="md:w-1/2 w-full text-gray-100 mb-8">
+          <div class="flex">
+            <h3
+              class="text-gray-800 p-2 border cursor-pointer"
+              id="input-title-decrypt"
+              onclick="changeState('encrypt')"
+            >
+              Giải mã
+            </h3>
+            <h3
+              class="text-gray-800 p-2 border cursor-pointer"
+              id="input-title-encrypt"
+              onclick="changeState('decrypt')"
+            >
+              Mã hóa
+            </h3>
+          </div>
+          <textarea
+            id="textarea-input"
+            onkeyup="handleKeyInput(event)"
+            class="w-full text-gray-800 overflow-auto overflow-hidden h-32 border resize-none focus:outline-none p-4"
+          ></textarea>
+        </div>
+        <div class="md:w-1/2 w-full text-gray-100 mb-8">
+          <div class="flex">
+            <h3
+              class="text-gray-800 p-2 border cursor-pointer"
+              id="output-title-encrypt"
+              onclick="changeState('decrypt')"
+            >
+              Giải mã
+            </h3>
+            <h3
+              class="text-gray-800 p-2 border cursor-pointer"
+              id="output-title-decrypt"
+              onclick="changeState('encrypt')"
+            >
+              Mã hóa
+            </h3>
+          </div>
+          <textarea
+            disabled
+            id="textarea-output"
+            class="w-full text-gray-800 overflow-auto overflow-hidden h-32 border resize-none focus:outline-none p-4"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./src/script.js"></script>
+</html>
